@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicBuilder.SoundBuilder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,23 +9,13 @@ namespace MusicBuilder
 {
     class Program
     {
-        static System.Media.SoundPlayer player;
-
         static void Main(string[] args)
         {
-            player = new System.Media.SoundPlayer("sounds/CYCdh_AcouKick-20.wav");
+            AbstractSoundBuilder builder = new DrumSoundBuilder(160, 20);
 
-            const int tempo = 60;
-            const int length = 30;
+            builder.PlaySoundSequence();
 
-            int sleepSec = 60 / tempo;
-            int loops = length / sleepSec;
-
-            for(int i = 0;i < loops; i++)
-            {
-                player.Play();
-                System.Threading.Thread.Sleep(sleepSec * 1000);
-            }
+            Console.ReadLine();
         }
     }
 }
