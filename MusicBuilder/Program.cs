@@ -11,7 +11,7 @@ namespace MusicBuilder
     {
         static void Main(string[] args)
         {
-            AbstractSoundBuilder builder = new DrumSoundBuilder(160, 20);
+            AbstractSoundBuilder builder = new DrumSoundBuilder(250, 20);
 
             builder.PlaySoundSequence();
 

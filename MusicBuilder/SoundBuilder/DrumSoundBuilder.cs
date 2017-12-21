@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace MusicBuilder.SoundBuilder
 {
@@ -22,7 +23,7 @@ namespace MusicBuilder.SoundBuilder
         {
             //player.SoundLocation = "sounds/drum/CYCdh_K1close_ClHat-01.wav";
             Random r = new Random();
-            
+
             for (int i = 0; i < (int)LoopCount; i++)
             {
                 player.SoundLocation = soundFiles[r.Next(soundFiles.Length)];
@@ -30,6 +31,8 @@ namespace MusicBuilder.SoundBuilder
                 player.Play();
                 System.Threading.Thread.Sleep((int)(SleepSec * 1000));
             }
+            
+
         }
     }
 }

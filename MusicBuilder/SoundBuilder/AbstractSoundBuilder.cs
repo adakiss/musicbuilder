@@ -8,8 +8,8 @@ namespace MusicBuilder.SoundBuilder
 {
     public abstract class AbstractSoundBuilder
     {
-        private float tempo;
-        private float length;
+        protected float tempo;
+        protected float length;
         protected System.Media.SoundPlayer player;
 
         public AbstractSoundBuilder(float tempo, float length)
